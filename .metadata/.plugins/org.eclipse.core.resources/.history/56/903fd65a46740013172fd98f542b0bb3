@@ -1,0 +1,119 @@
+
+<div class="row box-shadow">
+
+	<div class="span12 input-fullwidth">
+		<div class="" id="accordion2">
+			<div class="">
+				<div class="">
+					<a class="accordion-toggle" data-toggle="collapse"
+						data-parent="#accordion2" href="#collapseOne">Registered
+						endpoints <i id="collapse-icon" class="icon-chevron-right"></i>
+					</a>
+				</div>
+				<div id="collapseOne"
+					class="accordion-body collapse in input-fullwidth">
+					<div class="input-fullwidth">
+						[% IF paths.count > 0 %]
+						<table class="table table-striped">
+							<thead>
+								<th>ID</th>
+								<th>URL</th>
+								<th>Content Type</th>
+								<th>Content</th>
+							</thead>
+							<tbody>
+								[% WHILE (row = paths.next) %]
+								<tr>
+									<td>[% paths.info.at %]</td>
+									<td><a href="/[% row.path %]">http://localhost:3000/[%
+											row.path %]</a></td>
+											<td>[% row.headers.content_type %]</td>
+									<td><a href="#" id="popover_[% paths.info.at %]" class="" data-toggle="popover"
+										data-placement="left" title=""
+										data-content="[% row.content %]"
+										>Click to toggle popover</a></td>
+								</tr>
+								<script>
+								$('#popover_[% paths.info.at %]').popover({
+									container : 'body'
+								});
+								</script>
+								[% END %]
+							</tbody>
+						</table>
+						[% ELSE %]
+						<h4>No registered endpoints found</h4>
+						[% END %]
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+
+
+	$('#accordion2').on('hidden', function() {
+		$("#collapse-icon").attr("class", "icon-chevron-right");
+	});
+
+	$('#accordion2').on('shown', function() {
+		$("#collapse-icon").attr("class", "icon-chevron-down");
+	});
+</script>
+<br />
+
+<form role="form" action="/path" method="POST">
+
+	<div class="row box-shadow">
+		<div class="span12 input-fullwidth">
+
+			<label class="control-label" for="path">URL</label>
+			<div class="input-prepend input-fullwidth">
+				<span class="add-on">http://localhost:3000/</span>
+				<div class="input-wrapper">
+					<input type="text" name="path" id="path" class="span12"
+						placeholder="Some/Path" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="row box-shadow ">
+		<div class="span12 input-fullwidth">
+			<label class="control-label" for="content_type">Content-Type</label>
+			<div class="input-wrapper">
+				<input type="text" class="span12" name="content_type"
+					id="content_type" placeholder="application/json" autocomplete="off"
+					data-provide="typeahead"
+					data-source='["application/EDI-X12","application/EDIFACT","application/atom+xml","application/ecmascript","application/font-woff","application/gzip","application/javascript","application/json","application/octet-stream","application/ogg","application/pdf","application/postscript","application/rdf+xml","application/rss+xml","application/soap+xml","application/vnd.android.package-archive","application/vnd.dart","application/vnd.google-earth.kml+xml","application/vnd.google-earth.kmz","application/vnd.mozilla.xul+xml","application/vnd.ms-excel","application/vnd.ms-powerpoint","application/vnd.ms-xpsdocument","application/vnd.oasis.opendocument.graphics","application/vnd.oasis.opendocument.presentation","application/vnd.oasis.opendocument.spreadsheet","application/vnd.oasis.opendocument.text","application/vnd.openxmlformats-officedocument.presentationml.presentation","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/x-7z-compressed","application/x-deb","application/x-dvi","application/x-font-ttf","application/x-javascript","application/x-latex","application/x-mpegURL","application/x-pkcs12","application/x-rar-compressed","application/x-shockwave-flash","application/x-stuffit","application/x-tar","application/x-www-form-urlencoded","application/x-xpinstall","application/xhtml+xml","application/xml","application/xml-dtd","application/xop+xml","application/zip","audio/L24","audio/basic","audio/mp4","audio/mpeg","audio/ogg","audio/vnd.rn-realaudio","audio/vnd.wave","audio/vorbis","audio/webm","audio/x-aac","audio/x-caf","image/gif","image/jpeg","image/pjpeg","image/png","image/svg+xml","image/tiff","image/x-xcf","message/http","message/imdn+xml","message/partial","message/rfc822","model/iges","model/mesh","model/vrml","model/x3d+binary","model/x3d+vrml","model/x3d+xml","multipart/alternative","multipart/encrypted","multipart/form-data","multipart/mixed","multipart/related","multipart/signed","text/cmd","text/css","text/csv","text/html","text/javascript(Obsolete)","text/plain","text/vcard","text/x-gwt-rpc","text/x-jquery-tmpl","text/x-markdown","text/xml","video/mp4","video/mpeg","video/ogg","video/quicktime","video/webm","video/x-flv","video/x-matroska","video/x-ms-wmv"]'
+					data-items="15" />
+			</div>
+		</div>
+	</div>
+	<br />
+
+	<div class="row box-shadow">
+		<div class="span12 input-fullwidth">
+			<label class="control-label" for="content">Content</label>
+			<div class="input-wrapper">
+				<textarea id="content" name="content" class="span12" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+
+
+	<br />
+
+	<div class="form-group">
+		<button type="submit" class="btn btn-default">Submit</button>
+	</div>
+</form>
+
+
+

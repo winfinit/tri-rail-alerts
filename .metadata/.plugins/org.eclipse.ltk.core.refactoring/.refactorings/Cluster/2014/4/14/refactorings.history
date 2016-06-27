@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cluster/lib/Cluster/View/HTML.pm.new&apos; to &apos;HTML.pm&apos;" description="Rename resource &apos;HTML.pm.new&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lib/Cluster/View/HTML.pm.new" name="HTML.pm" stamp="1396575504785" updateReferences="true"/>
+</session>

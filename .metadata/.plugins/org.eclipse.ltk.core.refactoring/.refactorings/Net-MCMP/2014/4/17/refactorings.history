@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Net-MCMP/t/Net-MCMP-Live.t&apos; to &apos;Net-MCMP.t&apos;" description="Rename resource &apos;Net-MCMP-Live.t&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="t/Net-MCMP-Live.t" name="Net-MCMP.t" stamp="1398090356307" updateReferences="true"/>
+</session>

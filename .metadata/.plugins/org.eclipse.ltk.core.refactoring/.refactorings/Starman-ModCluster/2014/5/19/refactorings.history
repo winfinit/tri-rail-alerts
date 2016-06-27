@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Starman-ModCluster/bin/starman&apos; to &apos;starman-cluster&apos;" description="Rename resource &apos;starman&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="bin/starman" name="starman-cluster" stamp="1399471942752" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Starman-ModCluster/script&apos; to &apos;bin&apos;" description="Rename resource &apos;script&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="script" name="bin" stamp="1399644071676" updateReferences="true"/>
+</session>

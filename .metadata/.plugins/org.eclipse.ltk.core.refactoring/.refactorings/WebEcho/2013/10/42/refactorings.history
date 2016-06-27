@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;WebEcho/lib/RawEcho.pl&apos; to &apos;RawEcho.pm&apos;" description="Rename resource &apos;RawEcho.pl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lib/RawEcho.pl" name="RawEcho.pm" stamp="1382156111137" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;WebEcho/lib/WebEcho/View/Web.pm.new&apos; to &apos;Web.pm&apos;" description="Rename resource &apos;Web.pm.new&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="lib/WebEcho/View/Web.pm.new" name="Web.pm" stamp="1382202315155" updateReferences="true"/>
+</session>

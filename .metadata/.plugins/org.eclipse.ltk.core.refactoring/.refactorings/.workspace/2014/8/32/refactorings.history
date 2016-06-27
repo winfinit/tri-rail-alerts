@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;js-sequence-diagram&apos;" deleteContents="true" description="Delete resource &apos;js-sequence-diagram&apos;" element1="/js-sequence-diagram" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1407333207506"/>
+</session>

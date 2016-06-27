@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Experimental/CouchDB.pl&apos; to &apos;MongoDB.pl&apos;" description="Rename resource &apos;CouchDB.pl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="CouchDB.pl" name="MongoDB.pl" stamp="1382065657431" updateReferences="true"/>
+</session>

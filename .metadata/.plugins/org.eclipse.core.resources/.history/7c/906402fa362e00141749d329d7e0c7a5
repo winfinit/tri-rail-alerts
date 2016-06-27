@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <style>
+
+        </style>
+        <script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/StackBlur.js"></script>
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> 
+        
+    </head>
+ 
+    	<textarea id="language" rows="10" cols="50">
+Title: Sample Diagram [class="test"]
+Participant Bob [class="test"]
+A->Bob: Message [class="test"]
+    	</textarea>
+    	<button id="parse" type="button">Click Me!</button>  
+
+    	<div id="diagram"></div>
+    	<canvas id="canvas" width="1000px" height="600px"></canvas> 
+
+
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+        <script src="jquery.min.js"></script>
+
+        <!--script src="underscore-min.js"></script-->
+        <script src="lodash.min.js"></script>
+		<script src="raphael-min.js"></script>
+        <!--script src="https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael-min.js"></script-->
+
+        <!--
+        <script src="../build/grammar.js"></script>
+        <script src="../src/diagram.js"></script>
+        <script src="../src/jquery-plugin.js"></script>
+        <script src="../fonts/daniel/daniel_700.font.js"></script>
+        <script src="../src/sequence-diagram.js"></script>
+        -->
+
+        <script src="../build/sequence-diagram-min.js"></script>
+        <script>
+            $(document).ready(function(){
+            	draw();
+            	console.log($('#diagram').html());
+            	canvg(document.getElementById('canvas'), $('#diagram').html());
+                $('#parse').click(_.throttle( function() {
+					draw();
+                		
+                    //} catch (e) {
+                    //    console.log(e);
+                    //}
+                }, 100));
+            });
+            
+            function draw() {
+            	$("#diagram").html('');
+                //try {
+                    var diagram = Diagram.parse($('#language').val());
+                    diagram.drawSVG('diagram', {theme: 'hand'});
+            }
+        </script>
+    </body>
+</html>
+
+
+
