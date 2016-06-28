@@ -9,10 +9,10 @@ module.exports = {
 
 var tr_count = 0;
 var alert_count = 0;
-var data = [];
 var alert_start = false;
 
 function getAlerts(callback) {
+    var data = [];
     request.get("http://www.tri-rail.com/vip.mobile/mobile_vip_message.asp", function(err, res, body) {
         var parser = new htmlparser.Parser({
                 onopentag: function(name, attribs){
@@ -46,6 +46,7 @@ function getAlerts(callback) {
         }, {decodeEntities: true});
         parser.write(body);
         parser.end();
+        alert_count = 0;
         callback(data);
     });
 };

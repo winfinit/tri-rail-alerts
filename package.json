@@ -1,6 +1,6 @@
 {
   "name": "tri-rail-alerts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tri-Rail alerts",
   "main": "index.js",
   "scripts": {
